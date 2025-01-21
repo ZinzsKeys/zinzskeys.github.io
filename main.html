@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Number Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        #randomNumber {
+            font-size: 2em;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div id="randomNumber">0</div>
+
+    <script>
+        function generateRandomNumber() {
+            const randomNumber = Math.floor(Math.random() * 100000000000) + 1; // Generates a number between 1 and 100
+            document.getElementById('randomNumber').textContent = randomNumber;
+        }
+
+        // Generate a random number immediately on page load
+        generateRandomNumber();
+
+        // Set an interval to generate a random number every 10 seconds (10000 milliseconds)
+        setInterval(generateRandomNumber, 10000);
+    </script>
+</body>
+</html>
